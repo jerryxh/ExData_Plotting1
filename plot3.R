@@ -6,12 +6,12 @@ power.consumption$DateTime <- as.POSIXlt(power.consumption$DateTime)
  
 # Construct plot, add legend, and save it to a PNG file device
 png(filename='plot3.png', width=480, height=480, units='px')
-lncol <- c('black', 'red', 'blue')
-lbls <- c('Sub_metering_1', 'Sub_metering_2', 'Sub_metering_3')
-plot(power.consumption$DateTime,power.consumption$SubMetering1, type='l', col=lncol[1], xlab='', ylab='Energy sub metering')
-lines(power.consumption$DateTime, power.consumption$SubMetering2, col=lncol[2])
-lines(power.consumption$DateTime, power.consumption$SubMetering3, col=lncol[3])
-legend('topright', legend=lbls, col=lncol, lty='solid')
+linelabels <- c('Sub_metering_1', 'Sub_metering_2', 'Sub_metering_3')
+linecolors <- c('black', 'red', 'blue')
+plot(power.consumption$DateTime,power.consumption$SubMetering1, type='l', col=linecolors[1], xlab='', ylab='Energy sub metering')
+lines(power.consumption$DateTime, power.consumption$SubMetering2, col=linecolors[2])
+lines(power.consumption$DateTime, power.consumption$SubMetering3, col=linecolors[3])
+legend('topright', legend=linelabels, col=linecolors, lty='solid')
  
 # shut down the current PNG device
 x <- dev.off()
